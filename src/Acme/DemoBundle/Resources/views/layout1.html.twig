@@ -1,0 +1,22 @@
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="flash-message">
+      <em>Notice</em>: {{ flashMessage }}
+    </div>
+    {% endfor %}
+
+    {% block content_header %}
+    <ul id="menu">
+      {% block content_header_more %}
+      <li><a href="/">Demo Home</a></li>
+      {% endblock %}
+    </ul>
+
+    <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="symfony-content">
+      {% block content %}   
+      {% endblock %}
+    </div>
+
+    <h2>Angular Values: {% raw %}{{ append }} {% endraw %}</h2>
