@@ -15,7 +15,7 @@ function LoginCtrl($scope,$stateParams, $location, $http, $state, authService, d
     });
     $scope.loginUser = function() {
         var params = "_username=" + $scope.username + "&_password=" + $scope.password + "&_target_path=" + $state.current.data.name;
-        $http.post(prefix + 'demo/secured/login_check', params).
+        $http.post(prefix + '/demo/secured/login_check', params).
              success(function(data, status) {
                 if (authService.getBufferSize() > 0) {
                     authService.loginConfirmed();

@@ -4,6 +4,12 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+   "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rajasaur/FOSJsRoutingBundle.git"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
@@ -18,7 +24,9 @@
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
-        "kriswallsmith/assetic": "1.1.*@dev"
+        "kriswallsmith/assetic": "1.1.*@dev",
+        "friendsofsymfony/jsrouting-bundle": "dev-angularsf",
+        "jms/google-closure-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
