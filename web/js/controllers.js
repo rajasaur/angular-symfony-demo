@@ -30,9 +30,15 @@ function LoginCtrl($scope,$stateParams, $location, $http, $state, authService, d
     }
 }
 
-function RootCtrl($scope,$stateParams, $location, $http, datasets) {
+function RootCtrl($scope,$stateParams, $location, $http, $window, datasets) {
     $scope.append = $stateParams.name + "-appended";
     $scope.data = datasets;
+    $scope.testMe = function() {
+        $window.alert($scope.email + ":" + $scope.message);
+    }
+    $scope.formSubmit = function(formElem) {
+        $window.alert(formElem.serialize());
+    }
 }
 
 function LogoutCtrl($scope, $stateParams, $http, $state, $location, datasets) {

@@ -1,0 +1,17 @@
+{% block password_widget %}
+Another dummy here
+{% endblock %}
+
+{% block form_widget_simple %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+    <input type="{{ type }}" {{ block('widget_attributes') }} ng-model="{{ name }}" ng-init="{{name }}='{{value}}'" {% if type == 'hidden' %}value="{{ value }}"{% endif %} />
+{% endspaceless %}
+{% endblock form_widget_simple %}
+
+{% block textarea_widget %}
+{% spaceless %}
+    <textarea {{ block('widget_attributes') }} ng-model="{{ name }}" ng-init="{{ name }}='{{value}}'"></textarea>
+{% endspaceless %}
+{% endblock textarea_widget %}
+

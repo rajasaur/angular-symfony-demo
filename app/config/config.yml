@@ -62,3 +62,7 @@ swiftmailer:
 fos_js_routing:
     routes_to_expose: [ "[a-zA-z0-9_-]+" ]
 
+twig:
+    form:
+        resources:
+            - 'AcmeDemoBundle:Form:custom_form_div_layout.html.twig'

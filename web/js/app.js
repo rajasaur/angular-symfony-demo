@@ -28,6 +28,13 @@ angular.module('commusoft', ['ui.compat', 'commusoft.filters', 'commusoft.servic
                     controller: RootCtrl,
                     resolve: Resolver
                 }) 
+                .state('democontact', {
+                    url: Routing.generateAngularRoute('_demo_contact', false),
+                    template: globalTemplate,
+                    templateUrl: function(params) { return Routing.generate('_demo_contact') },
+                    controller: RootCtrl,
+                    resolve: Resolver
+                }) 
                 .state('demologin', {
                     url: Routing.generateAngularRoute('_demo_login', false),
                     template: globalTemplate,

@@ -1,9 +1,9 @@
-{% extends "AcmeDemoBundle::layout.html.twig" %}
+{% extends "AcmeDemoBundle::layout1.html.twig" %}
 
 {% block title "Symfony - Contact form" %}
 
 {% block content %}
-    <form action="{{ path('_demo_contact') }}" method="POST" id="contact_form">
+    <form action="{{ path('_demo_contact') }}" method="POST" id="contact_form" angular-submit>
         {{ form_errors(form) }}
 
         {{ form_row(form.email) }}
