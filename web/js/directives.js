@@ -17,11 +17,11 @@ angular.module('commusoft.directives', []).
         }
     };
   }]).
-  directive('angularSubmit', ['$window', function($window) {
+  directive('angularSubmit', ['$window', 'prefix', function($window, prefix) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            scope.actionVal = element[0].action;
+            scope.actionVal = prefix + '/' + element[0].action;
             element.removeAttr('action');
             element.on('submit', function() { scope.formSubmit(element); return false;});
         }

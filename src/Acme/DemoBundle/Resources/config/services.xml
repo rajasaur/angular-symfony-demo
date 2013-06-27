@@ -19,5 +19,9 @@
             <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
             <argument type="service" id="router" />
         </service>
+
+        <service id="redirect.listener" class="Acme\DemoBundle\EventListener\RedirectListener">
+            <tag name="kernel.event_subscriber" />
+        </service>
     </services>
 </container>

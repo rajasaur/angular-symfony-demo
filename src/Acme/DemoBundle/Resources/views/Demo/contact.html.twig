@@ -3,7 +3,7 @@
 {% block title "Symfony - Contact form" %}
 
 {% block content %}
-    <form action="{{ path('_demo_contact') }}" method="POST" id="contact_form" angular-submit>
+    <form action="{{ path('_demo_contact', {}, true) }}" method="POST" id="contact_form" angular-submit>
         {{ form_errors(form) }}
 
         {{ form_row(form.email) }}

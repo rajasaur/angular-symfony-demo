@@ -37,7 +37,14 @@ function RootCtrl($scope,$stateParams, $location, $http, $window, datasets) {
         $window.alert($scope.email + ":" + $scope.message);
     }
     $scope.formSubmit = function(formElem) {
-        $window.alert(formElem.serialize());
+        $http.post($scope.actionVal, formElem.serialize()).
+             success(function(data, status) {
+                $scope.data = data;
+             }).
+             error(function(data, status) {
+                $scope.data = data;
+
+            });
     }
 }
 
