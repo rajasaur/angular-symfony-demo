@@ -30,7 +30,7 @@ function LoginCtrl($scope,$stateParams, $location, $http, $state, authService, d
     }
 }
 
-function RootCtrl($scope,$stateParams, $location, $http, $window, datasets) {
+function RootCtrl($scope,$stateParams, $location, $http, $window, $state, datasets) {
     $scope.append = $stateParams.name + "-appended";
     $scope.data = datasets;
     $scope.testMe = function() {
@@ -39,7 +39,9 @@ function RootCtrl($scope,$stateParams, $location, $http, $window, datasets) {
     $scope.formSubmit = function(formElem) {
         $http.post($scope.actionVal, formElem.serialize()).
              success(function(data, status) {
-                $scope.data = data;
+                $scope.data = data.location.replace(/\//g, '');
+                $state.transitionTo($scope.data);
+                //$scope.data = data;
              }).
              error(function(data, status) {
                 $scope.data = data;

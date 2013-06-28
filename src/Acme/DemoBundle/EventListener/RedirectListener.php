@@ -27,7 +27,7 @@ class RedirectListener implements EventSubscriberInterface {
                 $session->getFlashBag()->setAll($session->getFlashBag()->peekAll());
             }
             $response->setContent(json_encode(array('location' => $response->headers->get('Location'))));
-            $response->setStatusCode(220);
+            $response->setStatusCode(200);
             $response->headers->set('Content-Type', 'application/json');
             $response->headers->remove('Location');
         } 

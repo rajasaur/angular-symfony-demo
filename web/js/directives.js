@@ -21,7 +21,7 @@ angular.module('commusoft.directives', []).
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            scope.actionVal = prefix + '/' + element[0].action;
+            scope.actionVal = prefix + element.attr('action');
             element.removeAttr('action');
             element.on('submit', function() { scope.formSubmit(element); return false;});
         }

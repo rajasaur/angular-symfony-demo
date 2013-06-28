@@ -14,14 +14,14 @@ angular.module('commusoft', ['ui.compat', 'commusoft.filters', 'commusoft.servic
             $locationProvider.html5Mode(true).hashPrefix('!');
 
             $stateProvider  
-                .state('root', {
+                .state('demo', {
                     url: '/',
                     template: globalTemplate,
                     templateUrl: function(params) { return Routing.generate('_demo') },
                     controller: MainCtrl,
                     resolve: Resolver,
                 })
-                .state('demo', {
+                .state('demohello', {
                     url: Routing.generateAngularRoute('_demo_hello', true),
                     template: globalTemplate,
                     templateUrl: function(params) { return Routing.generate('_demo_hello', params) },
