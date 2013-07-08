@@ -5,6 +5,31 @@
   <title>{% block title %}Demo Bundle{% endblock %}</title>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="/bundles/acmedemo/css/demo.css" />
+  <style type="text/css">
+    .animate-enter, .animate-leave
+    { 
+        -webkit-transition: all cubic-bezier(0.250, 0.250, 0.750, 0.750) 0.5s;
+        -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    } 
+ 
+    .animate-enter {
+        opacity: 0;
+    }
+    .animate-enter.animate-enter-active {
+        opacity: 1;
+    }
+ 
+    .animate-leave {
+        opacity: 1;
+    }
+    .animate-leave.animate-leave-active{
+        opacity: 0;
+    }
+
+  </style>
 </head>
 <body>
   <div id="symfony-wrapper">
@@ -19,7 +44,7 @@
       </form>
     </div>
 
-    <div ng-view ></div>
+    <div ng-view ng-animate="{enter: 'animate-enter'}"></div>
   </div>
 
   <div>Angular seed app: v<span app-version></span></div>
@@ -28,7 +53,7 @@
   <script src="bundles/fosjsrouting/js/router.js"></script>
   <script src="js/fos_js_routes.js"></script>
   <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-ui-states.js"></script>
+  <script src="lib/angular/angular-ui-router.js"></script>
   <script src="lib/angular/http-auth-interceptors.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
