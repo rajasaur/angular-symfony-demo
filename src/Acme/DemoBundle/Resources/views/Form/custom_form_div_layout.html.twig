@@ -15,3 +15,12 @@ Another dummy here
 {% endspaceless %}
 {% endblock textarea_widget %}
 
+{%  block form_row %}
+ {% spaceless %}
+    <div>
+        {{ form_label(form) }}
+        {{ form_widget(form) }}
+        <span class="error" ng-hide="{{ name }}.$error.required">Required</span>
+     </div>
+ {% endspaceless %}
+{% endblock form_row %}
